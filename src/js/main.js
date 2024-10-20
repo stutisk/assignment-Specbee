@@ -11,7 +11,7 @@ const speakers = [
   },
   {
     name: "Ranveer Allahbadia",
-    title: "Content Creator & Entrepreneur",
+    title: "Content Creator ",
     company: "BeerBiceps",
     image:
       "https://res.cloudinary.com/dvbw8xujd/image/upload/v1729427956/q5jnpmvnqggc8lktjya8.jpg",
@@ -31,7 +31,7 @@ const speakers = [
   },
   {
     name: "Sandeep Maheshwari",
-    title: "Entrepreneur & Motivational Speaker",
+    title: "Motivational Speaker",
     company: "ImagesBazaar",
     image:
       "https://res.cloudinary.com/dvbw8xujd/image/upload/v1729428317/od1knbsygnmhaz4sfntl.jpg",
@@ -113,7 +113,7 @@ const renderCards = () => {
         <div class="card bg-white mx-0 rounded-lg shadow-md p-6 flex flex-col items-center" data-index="${index}">
           <img src="${speaker.image}" alt="${speaker.name}" class="w-40 h-40 rounded-full">
           <h2 class="text-xl font-semibold mt-4">${speaker.name}</h2>
-          <p class="font-bold">${speaker.title}</p>
+          <p class="font-bold mt-5">${speaker.title}</p>
           <p class="text-gray-400">${speaker.company}</p>
         </div>
       `;
