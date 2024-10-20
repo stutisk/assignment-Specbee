@@ -2,7 +2,7 @@
 
 ## Live Demo
 
-Check out the live version of the project [here]([https://your-live-link.com](https://specbeeassgnment.netlify.app/)
+Check out the live version of the project [here]([Click Here](https://specbeeassgnment.netlify.app/)
  
 This project is a part of the technical assignment to create an interactive webpage for showcasing Featured Speakers for an Event. The page includes a speaker carousel, a detailed speaker modal, and a call-to-action section where users can navigate to see the full program. This project demonstrates skills in HTML, Tailwind CSS, JavaScript, and handling UI interactions.
 
