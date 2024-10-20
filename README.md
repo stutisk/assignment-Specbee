@@ -8,4 +8,4 @@ This project is a part of the technical assignment to create an interactive webp
 - **Tailwind CSS**: For responsive and utility-first CSS design.
 - **JavaScript**: For dynamic interactions, including the carousel and modal functionality.
 - **FontAwesome**: For displaying social media icons.
-- **Cloudinary**: For hosting the arrow image used in the call-to-action section.
+- **Cloudinary**: For hosting images
