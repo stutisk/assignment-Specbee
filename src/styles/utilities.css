@@ -1,0 +1,112 @@
+.m-0 {
+  margin: 0;
+}
+.ml-0{
+  margin-left: 0;
+}
+.mr-0{
+  margin-right: 0;
+}
+.mt-1{
+  margin-top: 1rem;
+}
+.m-1 {
+  margin: 0.25rem;
+}
+.m-2 {
+  margin: 0.5rem;
+}
+.mb-2{
+  margin-bottom: 0.5rem;
+}
+.mb-1{
+  margin-bottom: 1.5rem;
+}
+.mt-1{
+  margin-top: 1.5rem;
+}
+.m-3 {
+  margin: 1rem;
+}
+.m-4 {
+  margin: 1.5rem;
+}
+.m-5 {
+  margin: 2rem;
+}
+.mt-0{
+  margin-top: 0;
+}
+.p-0 {
+  padding: 0;
+}
+.p-1 {
+  padding: 0.25rem;
+}
+.p-2 {
+  padding: 0.5rem;
+}
+.p-3 {
+  padding: 1rem;
+}
+.p-4 {
+  padding: 1.5rem;
+}
+.p-5 {
+  padding: 2rem;
+}
+.pt-3 {
+  padding-top: 3.5rem;
+}
+.pb-3 {
+  padding-bottom: 3.5rem;
+}
+
+.pl-1 {
+  padding-left: 1rem;
+}
+.pr-1 {
+  padding-right: 1rem;
+}
+
+.ml-4 {
+  margin-left: 4rem;
+}
+.mr-4 {
+  margin-right: 4rem;
+}
+
+/* Text Alignment */
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+
+.flex {
+  display: flex;
+}
+.flex-row {
+  flex-direction: row;
+}
+.flex-column {
+  flex-direction: column;
+}
+.justify-center {
+  justify-content: center;
+}
+.align-center {
+  align-items: center;
+}
+
+.justify-between{
+  justify-content: space-between;
+}
+.self-center{
+  align-self: center;
+}
+

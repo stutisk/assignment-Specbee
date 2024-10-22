@@ -103,18 +103,18 @@ const speakers = [
 
 let currentIndex = 0;
 const cardsToShow = 4;
-const cardWidth = 285;
+const cardWidth = 460;
 
 const renderCards = () => {
   const container = document.getElementById("cards-container");
   container.innerHTML = "";
   speakers.forEach((speaker, index) => {
     const card = `
-        <div class="card bg-white mx-0 rounded-lg shadow-md p-6 flex flex-col items-center" data-index="${index}">
-          <img src="${speaker.image}" alt="${speaker.name}" class="w-40 h-40 rounded-full">
-          <h2 class="text-xl font-semibold mt-4">${speaker.name}</h2>
-          <p class="font-bold mt-5">${speaker.title}</p>
-          <p class="text-gray-400">${speaker.company}</p>
+        <div class="card" data-index="${index}">
+          <img src="${speaker.image}" alt="${speaker.name}" class="card-image">
+          <h2 class="card-name">${speaker.name}</h2>
+          <p class="subtitle mt-1">${speaker.title}</p>
+          <p class="light-gray">${speaker.company}</p>
         </div>
       `;
     container.innerHTML += card;
@@ -128,7 +128,7 @@ const renderCards = () => {
     });
   });
 
-  updateButtonStates(); // Check button states after rendering cards
+  updateButtonStates(); 
 };
 
 const showSpeakerDetails = (index) => {
@@ -147,39 +147,44 @@ const showSpeakerDetails = (index) => {
 const moveSlider = (direction) => {
   const container = document.getElementById("cards-container");
   const totalCards = speakers.length;
-  const maxIndex = totalCards - cardsToShow;
+  const maxIndex = totalCards - cardsToShow; // Calculate max index
 
+  // Adjust the current index based on the direction of the button click
   if (direction === "next") {
-    currentIndex = Math.min(currentIndex + cardsToShow, maxIndex);
+    currentIndex = Math.min(currentIndex + 1, maxIndex); // Don't exceed maxIndex
   } else {
-    currentIndex = Math.max(currentIndex - cardsToShow, 0);
+    currentIndex = Math.max(currentIndex - 1, 0); // Ensure it doesn't go below 0
   }
 
-  container.style.transform = `translateX(-${currentIndex * (cardWidth + 20)}px)`;
-  
-  updateButtonStates(); 
+  // Move the slider based on the current index and card width
+  container.style.transform = `translateX(-${
+    currentIndex * (cardWidth + 20)
+  }px)`;
+
+  updateButtonStates(); // Update button states (enabled/disabled) based on the current index
 };
+
+
 
 const updateButtonStates = () => {
   const prevButton = document.getElementById("prev-button");
   const nextButton = document.getElementById("next-button");
   const maxIndex = speakers.length - cardsToShow;
 
-  
   if (currentIndex === 0) {
     prevButton.disabled = true;
-    prevButton.classList.add('opacity-50', 'cursor-not-allowed'); 
+    prevButton.classList.add("btn-disable");
   } else {
     prevButton.disabled = false;
-    prevButton.classList.remove('opacity-50', 'cursor-not-allowed');
+    prevButton.classList.remove("btn-disable");
   }
 
   if (currentIndex >= maxIndex) {
     nextButton.disabled = true;
-    nextButton.classList.add('opacity-50', 'cursor-not-allowed'); 
+    nextButton.classList.add("btn-disable");
   } else {
     nextButton.disabled = false;
-    nextButton.classList.remove('opacity-50', 'cursor-not-allowed');
+    nextButton.classList.remove("btn-disable");
   }
 };
 
@@ -195,3 +200,5 @@ document.getElementById("close-button").addEventListener("click", () => {
 });
 
 renderCards();
+
+
