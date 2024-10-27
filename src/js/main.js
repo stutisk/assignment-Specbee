@@ -147,21 +147,21 @@ const showSpeakerDetails = (index) => {
 const moveSlider = (direction) => {
   const container = document.getElementById("cards-container");
   const totalCards = speakers.length;
-  const maxIndex = totalCards - cardsToShow; // Calculate max index
+  const maxIndex = totalCards - cardsToShow; 
 
-  // Adjust the current index based on the direction of the button click
+
   if (direction === "next") {
-    currentIndex = Math.min(currentIndex + 1, maxIndex); // Don't exceed maxIndex
+    currentIndex = Math.min(currentIndex + 1, maxIndex); 
   } else {
-    currentIndex = Math.max(currentIndex - 1, 0); // Ensure it doesn't go below 0
+    currentIndex = Math.max(currentIndex - 1, 0); 
   }
 
-  // Move the slider based on the current index and card width
+  
   container.style.transform = `translateX(-${
     currentIndex * (cardWidth + 20)
   }px)`;
 
-  updateButtonStates(); // Update button states (enabled/disabled) based on the current index
+  updateButtonStates(); 
 };
 
 
