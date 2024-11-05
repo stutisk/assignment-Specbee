@@ -1,14 +1,14 @@
 @import url(../styles/utilities.css);
 
 :root {
-  --background-color: rgb(243, 244, 246); /* Background color */
-  --white: #ffffff; /* White color */
-  --primary-color: #007bff; /* Primary button color */
-  --primary-hover-color: #0056b3; /* Primary button hover color */
-  --gray-color: #4b5563; /* Gray text color */
-  --light-gray-color: #6B6B6B; /* Light gray text color */
-  --border-radius: 0.5rem; /* Border radius */
-  --box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); /* Shadow for popups and cards */
+  --background-color: rgb(243, 244, 246); 
+  --white: #ffffff; 
+  --primary-color: #007bff; 
+  --primary-hover-color: #0056b3;
+  --gray-color: #4b5563;
+  --light-gray-color: #6B6B6B; 
+  --border-radius: 0.5rem; 
+  --box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); 
 }
 
 .root {
@@ -50,7 +50,7 @@ p {
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
   position: relative;
-  width: 96%;
+  /* width: 96%; */
 }
 
 .btn-close {
@@ -132,8 +132,9 @@ p {
 
 .slider-container {
   width: 100%;
-  max-width: 100%;
+  /* max-width: 100%; */
   overflow: hidden;
+  position: relative;
 }
 
 .btn-direction {
@@ -146,6 +147,7 @@ p {
   position: absolute;
   transition: background-color 0.2s ease-in-out;
   cursor: pointer;
+  z-index: 100;
 }
 
 .btn-direction:hover {
@@ -180,11 +182,13 @@ p {
   color: var(--gray-color);
   font-size: 0.875rem;
   position: relative;
+  left: -250px;
 }
 
 .card {
   min-width: 243px;
-  
+  width: calc(100% - 20px); 
+  max-width: 300px;
   cursor: pointer;
   background-color: var(--white);
   border-radius: var(--border-radius);
@@ -192,7 +196,10 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
+
 }
+
+
 
 .hidden {
   display: none;
@@ -216,6 +223,7 @@ p {
   font-size: 18px;
 }
 
+
 .right-btn {
   right: 50px;
 }
@@ -234,11 +242,27 @@ p {
   font-weight: 200;
 }
 
+
 .floating-image {
   right: 250px;
   top: 50px;
   position: relative;
 }
+@media (max-width: 768px){
+  .floating-image {
+    right: 0px;
+  }
+  .floating-text{
+    top: 50px;
+    left: -10px;
+  }
+
+  .container{
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}
+
 
 a {
   text-decoration: none;
