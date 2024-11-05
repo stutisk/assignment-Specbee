@@ -112,9 +112,9 @@ const renderCards = () => {
     const card = `
         <div class="card" data-index="${index}">
           <img src="${speaker.image}" alt="${speaker.name}" class="card-image">
-          <h2 class="card-name">${speaker.name}</h2>
+          <h2 class="card-name mt-1">${speaker.name}</h2>
           <p class="subtitle mt-1">${speaker.title}</p>
-          <p class="light-gray">${speaker.company}</p>
+          <p class="light-gray mt-03">${speaker.company}</p>
         </div>
       `;
     container.innerHTML += card;

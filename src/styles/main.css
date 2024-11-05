@@ -6,14 +6,14 @@
   --primary-color: #007bff; /* Primary button color */
   --primary-hover-color: #0056b3; /* Primary button hover color */
   --gray-color: #4b5563; /* Gray text color */
-  --light-gray-color: #9ca3af; /* Light gray text color */
+  --light-gray-color: #6B6B6B; /* Light gray text color */
   --border-radius: 0.5rem; /* Border radius */
   --box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); /* Shadow for popups and cards */
 }
 
 .root {
   margin: 0;
-  font-family: sans-serif;
+  font-family: "Metropolis", sans-serif;
   background-color: var(--background-color);
 }
 
@@ -39,9 +39,10 @@ p {
 }
 
 .subheading {
-  color: var(--gray-color);
+  /* color: var(--gray-color); */
   font-size: 1.125rem;
   line-height: 1.75rem;
+  font-weight: 200;
 }
 
 .popup {
@@ -57,12 +58,13 @@ p {
   color: var(--gray-color);
   border-radius: 50%;
   border: none;
-  height: 2rem;
-  width: 2rem;
+  height: 18px;
+  width: 18px;
   position: absolute;
-  top: 0.25rem;
+  top: 1rem;
   right: 0.5rem;
   transition: background-color 0.2s ease-in-out;
+  cursor: pointer;
 }
 
 .btn-close:hover {
@@ -113,7 +115,7 @@ p {
   margin-top: 1.25rem;
   @media (min-width: 1024px) {
     width: 66.6667%;
-    padding-left: 1.5rem;
+    padding-left: 1rem;
   }
 }
 
@@ -129,9 +131,9 @@ p {
 }
 
 .slider-container {
-  width: 100%; 
-  max-width: 100%; 
-  overflow: hidden; 
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .btn-direction {
@@ -139,8 +141,8 @@ p {
   color: var(--gray-color);
   border-radius: 50%;
   border: 1px solid #d1d5db;
-  height: 3rem;
-  width: 3rem;
+  height: 36px;
+  width: 36px;
   position: absolute;
   transition: background-color 0.2s ease-in-out;
   cursor: pointer;
@@ -181,12 +183,12 @@ p {
 }
 
 .card {
-  min-width: 260px;
-  margin: 0 10px;
+  min-width: 243px;
+  
   cursor: pointer;
   background-color: var(--white);
   border-radius: var(--border-radius);
-  padding: 1.5rem;
+  padding: 36px 21px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -197,28 +199,29 @@ p {
 }
 
 .card-image {
-  width: 10rem;
-  height: 10rem;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   overflow: hidden;
 }
 
 .card-name {
   font-size: 1.25rem;
-  font-weight: 600;
-  margin-top: 1rem;
+  font-weight: 700;
+
 }
 
 .subtitle {
-  font-weight: bold;
+  font-weight: 500;
+  font-size: 18px;
 }
 
 .right-btn {
-  right: 15px;
+  right: 50px;
 }
 
 .left-btn {
-  left: 15px;
+  left: 40px;
 }
 
 .btn-disable {
@@ -228,6 +231,7 @@ p {
 
 .light-gray {
   color: var(--light-gray-color);
+  font-weight: 200;
 }
 
 .floating-image {

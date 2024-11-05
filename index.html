@@ -11,10 +11,10 @@
     ></script>
   </head>
   <body class="root">
-    <div class="container text-center pt-3 pb-3 pl-1 pr-1 ml-4 mr-4">
+    <div class="container text-center pt-3 pb-3 pl-1 pr-1 ml-6 mr-6">
       <h1 class="heading mt-0 mb-2">View Our Featured Speakers for the Event</h1>
-      <p class="subheading mb-1 mt-0">
-        Our speakers are core contributors and industry thought leaders working
+      <p class="subheading mb-4 mt-0">
+        Speakers are core contributors and industry thought leaders working
         at <span style="color: #003fb4">companies</span> that push for
         innovation.
       </p>
@@ -32,10 +32,10 @@
               style="width: 150px; height: 150px"
             />
             <div class="popup-details flex flex-column self-center text-left ">
-              <h2 id="speaker-name" class="details-name"></h2>
-              <p id="speaker-title" class="details-title"></p>
-              <p id="speaker-company" class="details-company"></p>
-              <div>
+              <h2 id="speaker-name" class="card-name mt-0"></h2>
+              <p id="speaker-title" class="subtitle mt-1"></p>
+              <p id="speaker-company" class="light-gray mt-03"></p>
+              <div class="mt-1 flex gap">
                 <a href="#" target="_blank" class="text-black">
                   <i class="fa-brands fa-drupal fa-xl"></i>
                 </a>
@@ -66,12 +66,12 @@
           ></div>
 
           <div class="popup-description">
-            <p id="speaker-bio"></p>
+            <p id="speaker-bio" class="text-left"></p>
           </div>
         </div>
       </div>
 
-      <div class="slider-wrapper flex align-center justify-between mb-1">
+      <div class="slider-wrapper flex align-center justify-between mb-4">
         <button id="prev-button" class="btn-direction left-btn">
           <i class="fa-solid fa-chevron-left"></i>
         </button>

@@ -10,6 +10,9 @@
 .mt-1{
   margin-top: 1rem;
 }
+.mt-03{
+  margin-top: 0.3rem;
+}
 .m-1 {
   margin: 0.25rem;
 }
@@ -19,11 +22,14 @@
 .mb-2{
   margin-bottom: 0.5rem;
 }
+.mb-4{
+  margin-bottom: 4rem;
+}
 .mb-1{
   margin-bottom: 1.5rem;
 }
 .mt-1{
-  margin-top: 1.5rem;
+  margin-top: 1rem;
 }
 .m-3 {
   margin: 1rem;
@@ -69,11 +75,11 @@
   padding-right: 1rem;
 }
 
-.ml-4 {
-  margin-left: 4rem;
+.ml-6 {
+  margin-left: 6rem;
 }
-.mr-4 {
-  margin-right: 4rem;
+.mr-6 {
+  margin-right: 6rem;
 }
 
 /* Text Alignment */
@@ -110,3 +116,6 @@
   align-self: center;
 }
 
+.gap{
+  gap:16px
+}
