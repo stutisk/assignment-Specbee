@@ -103,7 +103,7 @@ const speakers = [
 
 let currentIndex = 0;
 const cardsToShow = 4;
-const cardWidth = 460;
+const cardWidth = 400;
 
 const renderCards = () => {
   const container = document.getElementById("cards-container");
