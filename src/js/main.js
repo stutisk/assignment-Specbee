@@ -102,21 +102,32 @@ const speakers = [
 ];
 
 let currentIndex = 0;
-const cardsToShow = 4;
-const cardWidth = 400;
+let cardsToShow = calculateCardsToShow();
+const cardGap = 20;
 
-const renderCards = () => {
+function calculateCardsToShow() {
+  if (window.innerWidth >= 1024) {
+    return 4;
+  } else if (window.innerWidth >= 768) {
+    return 2;
+  } else {
+    return 1;
+  }
+}
+
+function renderCards() {
   const container = document.getElementById("cards-container");
   container.innerHTML = "";
+
   speakers.forEach((speaker, index) => {
     const card = `
-        <div class="card" data-index="${index}">
-          <img src="${speaker.image}" alt="${speaker.name}" class="card-image">
-          <h2 class="card-name mt-1">${speaker.name}</h2>
-          <p class="subtitle mt-1">${speaker.title}</p>
-          <p class="light-gray mt-03">${speaker.company}</p>
-        </div>
-      `;
+      <div class="card" data-index="${index}">
+        <img src="${speaker.image}" alt="${speaker.name}" class="card-image">
+        <h2 class="card-name mt-1">${speaker.name}</h2>
+        <p class="subtitle mt-1">${speaker.title}</p>
+        <p class="light-gray mt-03">${speaker.company}</p>
+      </div>
+    `;
     container.innerHTML += card;
   });
 
@@ -128,8 +139,9 @@ const renderCards = () => {
     });
   });
 
-  updateButtonStates(); 
-};
+  updateButtonStates();
+  updateResponsiveStyles();
+}
 
 const showSpeakerDetails = (index) => {
   const speaker = speakers[index];
@@ -140,33 +152,31 @@ const showSpeakerDetails = (index) => {
   document.getElementById("speaker-bio").innerText = speaker.bio;
   document.getElementById("speaker-linkedin").href = speaker.linkedinUrl;
   document.getElementById("speaker-twitter").href = speaker.twitterUrl;
-
   document.getElementById("speaker-details").classList.remove("hidden");
 };
 
-const moveSlider = (direction) => {
-  const container = document.getElementById("cards-container");
-  const totalCards = speakers.length;
-  const maxIndex = totalCards - cardsToShow; 
+document.getElementById("close-button").addEventListener("click", () => {
+  document.getElementById("speaker-details").classList.add("hidden");
+});
 
+function moveSlider(direction) {
+  const container = document.getElementById("cards-container");
+  const maxIndex = speakers.length - cardsToShow;
 
   if (direction === "next") {
-    currentIndex = Math.min(currentIndex + 1, maxIndex); 
+    currentIndex = Math.min(currentIndex + 1, maxIndex);
   } else {
-    currentIndex = Math.max(currentIndex - 1, 0); 
+    currentIndex = Math.max(currentIndex - 1, 0);
   }
 
-  
+  const cardWidth = container.querySelector(".card").offsetWidth;
   container.style.transform = `translateX(-${
-    currentIndex * (cardWidth + 20)
+    currentIndex * (cardWidth + cardGap)
   }px)`;
+  updateButtonStates();
+}
 
-  updateButtonStates(); 
-};
-
-
-
-const updateButtonStates = () => {
+function updateButtonStates() {
   const prevButton = document.getElementById("prev-button");
   const nextButton = document.getElementById("next-button");
   const maxIndex = speakers.length - cardsToShow;
@@ -186,7 +196,17 @@ const updateButtonStates = () => {
     nextButton.disabled = false;
     nextButton.classList.remove("btn-disable");
   }
-};
+}
+
+function updateResponsiveStyles() {
+  document.documentElement.style.setProperty("--cards-to-show", cardsToShow);
+}
+
+window.addEventListener("resize", () => {
+  cardsToShow = calculateCardsToShow();
+  renderCards();
+  moveSlider(0);
+});
 
 document
   .getElementById("prev-button")
@@ -195,10 +215,4 @@ document
   .getElementById("next-button")
   .addEventListener("click", () => moveSlider("next"));
 
-document.getElementById("close-button").addEventListener("click", () => {
-  document.getElementById("speaker-details").classList.add("hidden");
-});
-
 renderCards();
-
-

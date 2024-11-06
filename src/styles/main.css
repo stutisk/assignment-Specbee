@@ -128,13 +128,18 @@ p {
   transition: transform 0.5s ease-in-out;
   gap: 20px;
   width: 90%;
+
+  
 }
 
 .slider-container {
   width: 100%;
-  /* max-width: 100%; */
+  max-width: 100%;
   overflow: hidden;
   position: relative;
+  scroll-behavior: smooth;
+  /* overflow-x: auto; 
+  scroll-behavior: smooth; */
 }
 
 .btn-direction {
@@ -185,10 +190,23 @@ p {
   left: -250px;
 }
 
+@media (max-width: 1024px) {
+  .card {
+    flex: 0 0 calc(100% / 2 - 20px); 
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    flex: 0 0 100%; 
+  }
+}
+
 .card {
-  min-width: 243px;
-  width: calc(100% - 20px); 
-  max-width: 300px;
+  flex: 0 0 calc(100% / var(--cards-to-show) - 20px);
+  /* min-width: 243px; */
+  /* width: calc(100% - 20px);  */
+  max-width: 243px;
   cursor: pointer;
   background-color: var(--white);
   border-radius: var(--border-radius);
@@ -197,6 +215,18 @@ p {
   flex-direction: column;
   align-items: center;
 
+}
+
+@media (max-width: 600px) {
+  .card {
+    width: calc(100% / 2);
+  }
+}
+
+@media (man-width: 1024px) {
+  .card {
+    width: calc(100% / 4); 
+  }
 }
 
 
@@ -261,7 +291,13 @@ p {
     margin-left: 1rem;
     margin-right: 1rem;
   }
+  /* .right-btn,.left-btn{
+    display: none;
+  } */
+ 
+
 }
+
 
 
 a {
