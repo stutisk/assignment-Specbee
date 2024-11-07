@@ -122,7 +122,7 @@ function renderCards() {
   speakers.forEach((speaker, index) => {
     const card = `
       <div class="card" data-index="${index}">
-        <img src="${speaker.image}" alt="${speaker.name}" class="card-image">
+        <img src="${speaker.image}" alt="${speaker.name}" class="card-image" data-index="${index}">
         <h2 class="card-name mt-1">${speaker.name}</h2>
         <p class="subtitle mt-1">${speaker.title}</p>
         <p class="light-gray mt-03">${speaker.company}</p>
@@ -131,9 +131,9 @@ function renderCards() {
     container.innerHTML += card;
   });
 
-  const cards = document.querySelectorAll(".card");
+  const cards = document.querySelectorAll(".card-image");
   cards.forEach((card) => {
-    card.addEventListener("click", () => {
+    card.addEventListener("mouseover", () => {
       const index = card.getAttribute("data-index");
       showSpeakerDetails(index);
     });

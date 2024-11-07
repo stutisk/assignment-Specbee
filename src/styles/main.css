@@ -207,7 +207,7 @@ p {
   /* min-width: 243px; */
   /* width: calc(100% - 20px);  */
   max-width: 243px;
-  cursor: pointer;
+ 
   background-color: var(--white);
   border-radius: var(--border-radius);
   padding: 36px 21px;
@@ -240,6 +240,7 @@ p {
   height: 150px;
   border-radius: 50%;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .card-name {
